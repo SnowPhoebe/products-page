@@ -1,6 +1,7 @@
 
 
 import React from 'react';
+import AddToCartButton from './AddToCartButton';
 
 interface ProductProps {
   id: string;
@@ -13,12 +14,16 @@ interface ProductProps {
 const Product: React.FC<ProductProps> = ({ id, name, imageUrl, price, category }) => {
   return (
     <div className="product">
-      <img src={imageUrl} alt={name} />
+      <div className="product-image">
+        <img src={imageUrl} alt={name} />
+      </div>
       <h3>{name}</h3>
       <p>{category}</p>
       <p>${price.toFixed(2)}</p>
+      <AddToCartButton productId={id} />
     </div>
   );
 };
 
 export default Product;
+// onAddToCart={handleAddToCart}

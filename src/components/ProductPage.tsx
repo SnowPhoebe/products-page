@@ -1,7 +1,8 @@
 
 
-import React from 'react';
+import React, {useState} from 'react';
 import Product from './Product';
+import CategoryFilter from './CategoryFilter';
 import jackets from '../assets/feature_jacket.webp'
 import boots from '../assets/feature_boots.webp'
 import bag from '../assets/feature_bag.webp'
@@ -16,6 +17,11 @@ interface ProductData {
   price: number;
   category: string;
 }
+
+interface ProductsListProps {
+    category: string | null;
+}
+
 
 const productsData: ProductData[] = [
     {
@@ -56,16 +62,29 @@ const productsData: ProductData[] = [
 ];
 
 const ProductsPage: React.FC = () => {
-  return (
-    <div className="products-page">
-      <h1>Products</h1>
-      <div className="products-container">
-        {productsData.map((product) => (
-          <Product key={product.id} {...product} />
-        ))}
+    const [selectedCategory, setSelectedCategory] = useState('');
+  
+    const categories = Array.from(new Set(productsData.map((product) => product.category)));
+  
+    const filteredProducts = selectedCategory
+      ? productsData.filter((product) => product.category === selectedCategory)
+      : productsData;
+  
+    return (
+      <div className="products-page">
+        <h1>Products</h1>
+        <CategoryFilter
+          categories={categories}
+          selectedCategory={selectedCategory}
+          onCategorySelect={setSelectedCategory}
+        />
+        <div className="products-container">
+          {filteredProducts.map((product) => (
+            <Product key={product.id} {...product} />
+          ))}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
 export default ProductsPage;

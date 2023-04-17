@@ -6,11 +6,12 @@ function App() {
     <GridItem area = 'nav'>
       <NavBar/>
     </GridItem>
-    <div className="App">
+    <GridItem area = 'aside' bg = 'gold'>Aside</GridItem>
+    <GridItem area = 'main'>
+      <div className="App">
       <ProductPage />
-    </div>
-    {/* /* <GridItem area = 'aside' bg = 'gold'>Aside</GridItem>
-    <GridItem area = 'main' bg = 'dodgerblue'>Main</GridItem> */}
+      </div>
+    </GridItem>
 
     
   </Grid>
