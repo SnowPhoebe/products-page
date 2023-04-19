@@ -8,6 +8,9 @@ import boots from '../assets/feature_boots.webp'
 import bag from '../assets/feature_bag.webp'
 import dress from '../assets/women_dress.webp'
 import pajamas from '../assets/women_pajamas.webp'
+import mug from '../assets/mug.png'
+import microwave from '../assets/microwave.png'
+import skateboard from '../assets/skateboard.png'
 
 
 interface ProductData {
@@ -16,10 +19,6 @@ interface ProductData {
   imageUrl: string;
   price: number;
   category: string;
-}
-
-interface ProductsListProps {
-    category: string | null;
 }
 
 
@@ -58,6 +57,27 @@ const productsData: ProductData[] = [
         imageUrl: pajamas,
         price: 9.99,
         category: 'Clothes',
+    },
+    {
+        id: '6',
+        name: 'CatMug',
+        imageUrl: mug,
+        price: 13.00,
+        category: 'DailyUse',
+    },
+    {
+        id: '7',
+        name: 'Microwave',
+        imageUrl: microwave,
+        price: 49.99,
+        category: 'DailyUse',
+    },
+    {
+        id: '8',
+        name: 'Skateboard',
+        imageUrl: skateboard,
+        price: 32.99,
+        category: 'DailyUse',
     },
 ];
 

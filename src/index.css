@@ -83,3 +83,33 @@ body {
 .add-to-cart-button:hover {
   background-color: #0056b3;
 }
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+}
+
+.navbar-brand,
+.navbar-links,
+.navbar-cart {
+  display: flex;
+}
+
+.navbar-brand a,
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+.navbar-cart {
+  margin-left: auto;
+}
